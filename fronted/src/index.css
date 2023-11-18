@@ -1,0 +1,19 @@
+:root {
+    /* font-size: 10px; */
+    }
+
+a {
+    text-decoration: none;
+}
+
+body {
+    
+}
+
+#root {
+    max-width: 1700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
