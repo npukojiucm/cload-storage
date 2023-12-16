@@ -1,11 +1,12 @@
 import { Image, Nav, Stack } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { NavBarProps } from "./NavBar.props.ts";
 import { useState } from "react";
+import LoginForm from "../LoginForm.tsx/LoginForm.tsx";
 
-export default function NavBar({ children }: NavBarProps) {
+export default function NavBar() {
     const [isSignIn, setIsSignIn] = useState(false);
+
 
   const clickSignInBtn = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -14,6 +15,7 @@ export default function NavBar({ children }: NavBarProps) {
 
     return setIsSignIn(!isSignIn);
   };
+
 
   return (
     <Nav
@@ -36,7 +38,7 @@ export default function NavBar({ children }: NavBarProps) {
         <Nav variant="tabs" className="border-0">
           <Nav.Item className="position-relative">
             <Nav.Link onClick={clickSignInBtn}>Sign in</Nav.Link>
-            {isSignIn && children}
+            {isSignIn && <LoginForm/>}
           </Nav.Item>
 
           <Nav.Item>

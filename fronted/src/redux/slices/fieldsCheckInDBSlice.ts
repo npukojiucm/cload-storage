@@ -1,7 +1,9 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   SetEmailOrLoginPayload,
-  StateCheckFieldSlice,
+  StateEmail,
+  StateLogin,
+  StatePassword,
 } from "../../interface/interface";
 
 export const loginCheckInDB = createAsyncThunk(
@@ -26,23 +28,61 @@ export const loginCheckInDB = createAsyncThunk(
   }
 );
 
-const initialState = {
-  email: "",
-  login: "",
-  button: false,
-} as StateCheckFieldSlice;
+// const initialState: State = {
+//   login: {
+//     login: "",
+//     loginLength: 0,
+//     loginLetters: 0,
+//   },
+//   password: {
+//     password: "",
+//     passwordLength: 0,
+//   }, 
+//   email: {
+//     email: "",
+//     emailIsValid: false,
+//   }
+// };
+
+const stateLogin: StateLogin = {
+  login: {
+    login: "",
+    loginLength: 0,
+    loginLetters: 0,
+  }
+}
+
+const statePassword: StatePassword = {
+  password: {
+    password: "",
+    passwordLength: 0,
+  }
+}
+
+const stateEmail: StateEmail = {
+  email: {
+    email: "",
+    emailIsValid: false,
+  }
+}
+
+const initialState = {...stateEmail, ...stateLogin, ...statePassword}
 
 const fieldsCheckSlice = createSlice({
   name: "filedsCheck",
   initialState,
   reducers: {
     setEmailOrLogin: (
-      state: StateCheckFieldSlice,
+      state,
       action: PayloadAction<SetEmailOrLoginPayload>
     ) => {
       const { field, value } = action.payload;
-
-      state[field] = value;
+      
+      if (field === "login") {
+        state[field][field] = value
+      } else {
+        state[field][field] = value
+      }
     },
   },
   //   extraReducers: (builder) => {

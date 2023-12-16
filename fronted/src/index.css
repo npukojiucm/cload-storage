@@ -1,13 +1,9 @@
-:root {
-    /* font-size: 10px; */
-    }
-
 a {
     text-decoration: none;
 }
 
 body {
-    
+    position: relative;
 }
 
 #root {
@@ -16,4 +12,17 @@ body {
     margin-right: auto;
 }
 
+.font-green {
+    color: green;
+}
+
+.font-red {
+    color: red;
+}
+
+.drop-active {
+    background-color: rgb(154, 154, 154);
+    outline: 2px dashed rgba(255,255,255,0.8);
+    outline-offset: -10px
+}
 

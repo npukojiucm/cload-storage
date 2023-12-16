@@ -5,6 +5,7 @@ export default function LoginForm() {
     <Form
       className="position-absolute border border-info-subtle rounded-4 shadow fs-6"
       style={{ width: 300 }}
+
     >
       <Form.Group className="m-3 mb-0">
         <Form.Label className="">Login</Form.Label>

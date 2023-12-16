@@ -16,5 +16,5 @@ class User(models.Model):
         db_table = 'users'
         ordering = ['login']
 
-        def __str__(self):
-            return self.login
+        def __str__(self) -> str:
+            return self.first_name

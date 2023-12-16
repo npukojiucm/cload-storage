@@ -157,3 +157,6 @@ CORS_ORIGIN_WHITELIST = (
 REST_FRAMEWORK = {
 }
 
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.Argon2PasswordHasher",
+]
